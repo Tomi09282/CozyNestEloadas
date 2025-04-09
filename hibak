@@ -1,3 +1,7 @@
 Roomcontrollercs:96
 if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) == null) (rossz)
 if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) != null) (jo)
+
+
+wpf Pages/rooms.xaml.cs:17
+        private const string BaseUrl = "http://localhost:5232/api/room"; (http-re at kellett irni httpsrol)
