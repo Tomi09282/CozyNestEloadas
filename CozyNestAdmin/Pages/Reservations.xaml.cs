@@ -139,6 +139,7 @@ namespace CozyNestAdmin
 
         private async void SaveService_Click(object sender, RoutedEventArgs e)
         {
+            _ = LoadReservationsAsync();
             try
             {
                 if (string.IsNullOrWhiteSpace(ServiceNameTextBox.Text) ||
@@ -182,6 +183,7 @@ namespace CozyNestAdmin
 
         private async void ModifyService_Click(object sender, RoutedEventArgs e)
         {
+            _ = LoadReservationsAsync();
             try
             {
                 if (string.IsNullOrWhiteSpace(ServiceNameTextBox.Text) ||
