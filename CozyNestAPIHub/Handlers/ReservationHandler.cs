@@ -434,11 +434,12 @@ namespace CozyNestAPIHub.Handlers
             {
                 using var connection = CreateConnection();
                 await connection.OpenAsync();
-                var query = @"INSERT INTO services (name, description, price) VALUES (@name, @description, @price);";
+                var query = @"INSERT INTO services (name, description, price, is_active) VALUES (@name, @description, @price, @is_active);";
                 using var cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@name", service.Name);
                 cmd.Parameters.AddWithValue("@description", service.Description);
                 cmd.Parameters.AddWithValue("@price", service.Price);
+                cmd.Parameters.AddWithValue("@is_active", true);
                 await cmd.ExecuteScalarAsync();
                 return await GetServiceByName(service.Name);
             }

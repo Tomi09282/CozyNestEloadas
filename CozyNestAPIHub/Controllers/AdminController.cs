@@ -490,7 +490,8 @@ namespace CozyNestAPIHub.Controllers
                     id = createdService.Id,
                     name = createdService.Name,
                     description = createdService.Description,
-                    price = createdService.Price
+                    price = createdService.Price,
+                    is_active = true
                 }
             });
         }

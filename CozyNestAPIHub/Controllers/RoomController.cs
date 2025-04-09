@@ -93,7 +93,7 @@ namespace CozyNestAPIHub.Controllers
                     message = "Érvénytelen szoba típus."
                 });
             }
-            if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) == null)
+            if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) != null)
             {
                 return Unauthorized(new
                 {
