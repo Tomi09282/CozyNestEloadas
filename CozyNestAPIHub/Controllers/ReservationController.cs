@@ -67,7 +67,7 @@ namespace CozyNestAPIHub.Controllers
         /// <response code="404">Nem található a szoba.</response>
         /// <response code="500">Sikertelen foglalás.</response>
         [Route("reserve")]
-        [HttpDelete]
+        [HttpPost]
         [RequireAccessToken]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -90,7 +90,7 @@ namespace CozyNestAPIHub.Controllers
                     message = "Nem lehet a foglaláshoz tartozó személyek mennyisége kisebb, mint 1."
                 });
             }
-            if (room.Capacity < request.Capacity)
+            if (room.Capacity >= request.Capacity)
             {
                 return BadRequest(new
                 {

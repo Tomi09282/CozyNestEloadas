@@ -375,7 +375,7 @@ namespace CozyNestAPIHub.Handlers
                         PricePerNight = reader.GetDecimal("price_per_night"),
                         Status = reader.GetInt32("status"),
                         Description = reader.GetString("description"),
-                        Deleted = reader.GetBoolean("deleted")
+                        Deleted = false
                     };
 
                     return room;
