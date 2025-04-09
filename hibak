@@ -2,6 +2,14 @@ Roomcontrollercs:96
 if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) == null) (rossz)
 if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) != null) (jo)
 
+ReservationHandler.cs:442
+var query = @"INSERT INTO services (name, description, price) VALUES (@name, @description, @price);";
+
+var query = @"INSERT INTO services (name, description, price, is_active) VALUES (@name, @description, @price, @is_active);";
+
+
+ReservationHandler.cs:442 ADD Line
+ cmd.Parameters.AddWithValue("@is_active", true);
 
 wpf Pages/rooms.xaml.cs:17
         private const string BaseUrl = "http://localhost:5232/api/room"; (http-re at kellett irni httpsrol)
