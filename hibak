@@ -1,0 +1,3 @@
+Roomcontrollercs:96
+if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) == null) (rossz)
+if (await RoomHandler.GetRoomByRoomNumber(request.RoomNumber) != null) (jo)
