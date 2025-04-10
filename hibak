@@ -13,3 +13,11 @@ ReservationHandler.cs:442 ADD Line
 
 wpf Pages/rooms.xaml.cs:17
         private const string BaseUrl = "http://localhost:5232/api/room"; (http-re at kellett irni httpsrol)
+
+
+reservations.xaml.cs:
+ServicesListBox.Items.Add($"{service.Name} ({service.Price:F0} Ft)");
+  ServicesListBox.Items.Add($"{service.Id} {service.Name} ({service.Price:F0} Ft)"); (78.sor)
+
+204.sor:
+id = ServicesListBox.SelectedItem.ToString().Split(" ")[0]
