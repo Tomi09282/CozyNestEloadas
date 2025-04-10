@@ -55,11 +55,14 @@ const ReserveRoom = () => {
       roomNumber: room.roomNumber,
       checkInDate,
       checkOutDate,
-      services,
+      services: services.map((id) => ({
+        serviceId: id,
+        quantity: 1,
+      })),
       notes,
-      guests,
+      capacity: guests,
     };
-
+console.log(reservationData)
     try {
       const token = localStorage.getItem("accessToken");
       if (!token) {
